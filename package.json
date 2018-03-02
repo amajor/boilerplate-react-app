@@ -54,7 +54,8 @@
     "build": "node scripts/build.js",
     "lint": "eslint ./src/**/*.js*",
     "lint:fix": "eslint ./src/**/*.js* --fix",
-    "test": "node scripts/test.js --env=jsdom"
+    "specs": "node scripts/test.js --env=jsdom",
+    "test": "npm run lint && npm run specs"
   },
   "jest": {
     "collectCoverageFrom": [
