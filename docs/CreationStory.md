@@ -4,6 +4,7 @@ When creating this boilerplate, this is the process I used.
 
 * [Create React App](#create-react-app)
 * [Simple Component](#add-a-simple-component)
+* [Test Suite](#test-suite)
 
 ## Create React App
 
@@ -34,4 +35,34 @@ example of how to organize components to someone using this boilerplate.
 You'll see the component and its test in _src/components/Image_.
 
 I've also added it to App.js to ensure it's working the way I expect.
+
+## Test Suite
+
+There is a built in test suite that uses
+[Jest](https://facebook.github.io/jest/).
+
+In order to allow for shallow testing, I've also included enzyme by running the
+following scripts (you can read more about it
+[here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#testing-components)):
+
+```sh
+npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
+```
+
+The shallow testing allows me to render just the component itself and not any
+deeper (no child components).
+
+Once I've installed Enzyme, we need to import the files for test setup, so I
+created the file _config/jest/setupEnzyme.js_ as described by
+[Facebook](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#testing-components).
+
+Then we just need to reference the file in setup in _package.json_ by adding the
+setup file path to the **setupFiles** section.
+
+Test files for components can be named to include `test` or `spec`. You can see
+what files are being searched by looking at _package.json_ and then reading the
+`testMatch` section under `jest`.
+
+Example test files can be seen in _App.test.js_ and in
+_src/components/Image/spec.jsx_.
 
