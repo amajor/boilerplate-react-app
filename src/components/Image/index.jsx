@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DefaultImage from './default_image.gif';
 
-class Image extends React.Component {
-  render() {
-    return (
-      <img src={this.props.source} alt={this.props.name} />
-    );
-  }
-}
+const Image = props => (
+  <img src={props.source} alt={props.name} />
+);
 
 Image.propTypes = {
   /** The name of the image */
@@ -18,6 +14,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
+  name: '',
   source: DefaultImage,
 };
 
