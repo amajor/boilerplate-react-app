@@ -5,6 +5,7 @@ When creating this boilerplate, this is the process I used.
 * [Create React App](#create-react-app)
 * [Simple Component](#add-a-simple-component)
 * [Test Suite](#test-suite)
+* [ESLint](#eslint)
 
 ## Create React App
 
@@ -65,4 +66,44 @@ what files are being searched by looking at _package.json_ and then reading the
 
 Example test files can be seen in _App.test.js_ and in
 _src/components/Image/spec.jsx_.
+
+## ESLint
+
+It's always good to have a linter in order to have consistency in your code
+style, whether writing it yourself or with the help of multiple people. Linters
+are also great ways to learn about better ways to write code!
+
+ESLint was installed as a dependency using npm:
+
+```sh
+npm install eslint --save
+```
+
+Once that was done, I initalized my config file:
+
+```sh
+./node_modules/.bin/eslint --init
+```
+
+I answered the prompts as follows:
+
+* Use a popular style guide
+* Airbnb
+* y (Do you use React?)
+* JSON
+
+Once it was installed, I add a couple of scripts to _package.json_:
+
+```json
+  "lint": "eslint ./src/**/*.js*",
+  "lint:fix": "eslint ./src/**/*.js* --fix",
+```
+
+What `npm run lint` does is look for _.js_ and _.jsx_ files that are inside of
+the _src_ directory. This way we're not also linting configuration files, we
+really only care about the components that are being written for the
+application.
+
+The second command, `npm run lint:fix` will run the linter with the `--fix`
+argument, which will automatically fix any warnings that are straightforward.
 
