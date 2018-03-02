@@ -110,11 +110,12 @@ argument, which will automatically fix any warnings that are straightforward.
 
 ## React Storybook
 
-[React Storybook](https://storybook.js.org/) is a very useful tool for showcasing individual
-components before they are included as a part of the whole app.
+[React Storybook](https://storybook.js.org/) is a very useful tool for
+showcasing individual components before they are included as a part of the whole
+app.
 
-It also allows you to create prop definitions and provide source code examples to developers
-that may be using your components.
+It also allows you to create prop definitions and provide source code examples
+to developers that may be using your components.
 
 Future you will thank past you for having components documented in this way.
 
@@ -124,3 +125,43 @@ cd boilerplate-react-app
 getstorybook
 ```
 
+Once I've got it initialized, I customize the configurations.
+
+First install _@storybook/addon-info_ and _@storybook/addon-console_:
+
+```sh
+npm install -S @storybook/addon-info @storybook/addon-console
+```
+
+Then update _.storybook/config.js_
+
+```js
+// .storybook/config.js
+import { configure } from '@storybook/react';
+import { setDefaults, withInfo } from '@storybook/addon-info';
+import '@storybook/addon-console';
+
+// Determine which files are included in story display
+const req = require.context('../src/components', true, /.stories.jsx$/)
+function loadStories() {
+  req.keys().forEach((filename) => req(filename))
+}
+
+// Show information in upper-right corner for components
+setDefaults({
+  header: false,
+  inline: true,
+  maxPropsIntoLine: 1,
+});
+
+// Finalize configuration
+configure(loadStories, module);
+```
+
+Finally, we need to also include a handler for our image types in _.stories/webpack.config.js_.
+
+serve -s build
+```
+
+There are a lot of ways that you can push this to be accessible by others, so we've left it
+open-ended for now.
