@@ -6,6 +6,7 @@ When creating this boilerplate, this is the process I used.
 * [Simple Component](#add-a-simple-component)
 * [Test Suite](#test-suite)
 * [ESLint](#eslint)
+* [React Storybook](#react-storybook)
 
 ## Create React App
 
@@ -106,4 +107,20 @@ application.
 
 The second command, `npm run lint:fix` will run the linter with the `--fix`
 argument, which will automatically fix any warnings that are straightforward.
+
+## React Storybook
+
+[React Storybook](https://storybook.js.org/) is a very useful tool for showcasing individual
+components before they are included as a part of the whole app.
+
+It also allows you to create prop definitions and provide source code examples to developers
+that may be using your components.
+
+Future you will thank past you for having components documented in this way.
+
+```sh
+npm i -g @storybook/cli
+cd boilerplate-react-app
+getstorybook
+```
 
