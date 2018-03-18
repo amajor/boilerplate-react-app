@@ -22,9 +22,9 @@ The component should have these files at a minimum.
 * **spec.jsx** - this contains all unit tests for the component
 * **stories.jsx** - this generates a page for Storybook for interactive examples
 
-See the **Developing** section below for creating new components using a script!
+See the **[Developing](./README.md#developing)** section below for creating new components using a script!
 
-# Running the Application
+## Running the Application
 
 If you're running the app for the first time, be sure to install all dependencies.
 
@@ -40,7 +40,7 @@ npm start
 
 This will start up the app and automatically point your browser to `http://localhost:3000/`.
 
-# Running Tests
+## Running Tests
 
 This runs tests. You must have [Watchman](https://facebook.github.io/watchman/docs/install.html) installed in order to run the test suite.
 
@@ -53,7 +53,7 @@ tests by file or test names.
 
 If you run into any problems with getting the tests to run, first check the [Troubleshooting](./docs/Troubleshooting.md#error-error-watching-file-for-changes-emfile) document for more ideas.
 
-### Creating the Build
+## Creating the Build
 
 This builds a static copy of the application, ready for deployment.
 
@@ -61,7 +61,7 @@ This builds a static copy of the application, ready for deployment.
 npm run build
 ```
 
-# Developing
+## Developing
 
 Want to add new components? Great!
 
