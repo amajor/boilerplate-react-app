@@ -76,7 +76,8 @@ There's a script set up that you can run in order to get the main files set up f
 npm run create
 ```
 
-This will prompt you with two questions. The responses you provide will be used in the naming and setup of the component files.
+This will prompt you with one simple question. The response you provide will 
+be used in the naming and setup of the component files.
 
 ### Example
 
