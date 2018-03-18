@@ -42,7 +42,7 @@ This will start up the app and automatically point your browser to `http://local
 
 # Running Tests
 
-This runs tests.
+This runs tests. You must have [Watchman](https://facebook.github.io/watchman/docs/install.html) installed in order to run the test suite.
 
 ```sh
 npm test
@@ -50,6 +50,8 @@ npm test
 
 Follow the prompts in your terminal for additional options, including filtering
 tests by file or test names.
+
+If you run into any problems with getting the tests to run, first check the [Troubleshooting](./docs/Troubleshooting.md#error-error-watching-file-for-changes-emfile) document for more ideas.
 
 ### Creating the Build
 
