@@ -22,6 +22,8 @@ The component should have these files at a minimum.
 * **spec.jsx** - this contains all unit tests for the component
 * **stories.jsx** - this generates a page for Storybook for interactive examples
 
+See the **Developing** section below for creating new components using a script!
+
 # Running the Application
 
 If you're running the app for the first time, be sure to install all dependencies.
@@ -56,3 +58,43 @@ This builds a static copy of the application, ready for deployment.
 ```sh
 npm run build
 ```
+
+# Developing
+
+Want to add new components? Great!
+
+There are a few files that every component should have:
+
+* **index.jsx** _(this is the actual component)_
+* **spec.jsx** _(this contains necessary tests for the component)_
+* **stories.jsx** _(this contains storybook entries for the component)_
+* **OPTIONAL:** styles.jsx / styles.css _(any styling needed)_
+
+There's a script set up that you can run in order to get the main files set up for a new component.
+
+```sh
+npm run create
+```
+
+This will prompt you with two questions. The responses you provide will be used in the naming and setup of the component files.
+
+### Example
+
+```sh
+$ npm run create
+
+Component Name (in PascalCase, please): AmazingComponent
+```
+
+This will generate 3 files for you:
+
+```
+src/
+└── components/
+    └── MyAwesomeComponent
+        ├── index.jsx
+        ├── spec.jsx
+        └── stories.jsx
+```
+
+Now that your files are set up, you can edit away!

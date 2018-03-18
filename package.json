@@ -59,6 +59,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "create": "bash ./scripts/create.sh",
     "lint": "eslint ./src/**/*.js*",
     "lint:fix": "eslint ./src/**/*.js* --fix",
     "specs": "node scripts/test.js --env=jsdom",
